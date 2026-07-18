@@ -4,178 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>research-focus-checklist.html</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" scrolling="no" referrerpolicy="no-referrer" title="research-focus-checklist.html" data-srcdoc="&lt;!doctype html&gt;
-&lt;html lang=&quot;zh-CN&quot;&gt;
-&lt;head&gt;
-&lt;meta charset=&quot;utf-8&quot;&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
-&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'&quot;&gt;
-&lt;title&gt;research-focus-checklist.html&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;script&gt;(() =&gt; {
-  const root = document.documentElement;
-  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
-  const apply = Reflect.apply;
-  const isArray = Array.isArray;
-  const parentWindow = globalThis.parent;
-  /**
-   * @param {object} prototype
-   * @param {string} property
-   */
-  const getPrototypeGetter = (prototype, property) =&gt; {
-    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
-    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
-    if (getter == null) {
-      throw new Error(`Missing ${property} getter`);
-    }
-    return getter;
-  };
-  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
-  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
-  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const addHostMessageListener = MessagePort.prototype.addEventListener;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const postHostMessage = MessagePort.prototype.postMessage;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const startHostPort = MessagePort.prototype.start;
-  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
-  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
-  /** @type {MessagePort | null} */
-  let hostPort = null;
-  const postToHost = (type, payload) =&gt; {
-    if (hostPort != null) {
-      apply(postHostMessage, hostPort, [{ type, ...payload }]);
-    }
-  };
-  const openExternal = ({ href }) =&gt; {
-    if (globalThis.navigator.userActivation?.isActive === true) {
-      postToHost(&quot;open-external&quot;, { href });
-    }
-  };
-  const sendFollowUpMessage = ({ prompt, title }) =&gt; {
-    if (globalThis.navigator.userActivation?.isActive === true) {
-      postToHost(&quot;follow-up&quot;, { prompt, title });
-    }
-    return Promise.resolve();
-  };
-  const syncTheme = () =&gt; {
-    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
-    root.dataset.theme = theme;
-    globalThis.openai = {
-      ...globalThis.openai,
-      openExternal,
-      sendFollowUpMessage,
-      theme,
-      visualizationStyleVariables: {},
-      visualizationTheme: theme,
-    };
-    globalThis.dispatchEvent(
-      new CustomEvent(&quot;openai:set_globals&quot;, {
-        detail: { globals: globalThis.openai },
-      }),
-    );
-  };
-  const sendHeight = () =&gt; {
-    postToHost(&quot;height&quot;, {
-      height: Math.ceil(
-        Math.max(
-          document.body.scrollHeight,
-          document.body.getBoundingClientRect().height,
-        ),
-      ),
-    });
-  };
-
-  globalThis.addEventListener(
-    &quot;message&quot;,
-    (event) =&gt; {
-      const data = apply(getMessageData, event, []);
-      const ports = apply(getMessagePorts, event, []);
-      const source = apply(getMessageSource, event, []);
-      if (
-        source !== parentWindow ||
-        typeof data !== &quot;object&quot; ||
-        data == null ||
-        data.type !== &quot;codex-visualization-initialize&quot; ||
-        !isArray(ports) ||
-        ports.length !== 1
-      ) {
-        return;
-      }
-      apply(stopMessagePropagation, event, []);
-      const nextHostPort = ports[0];
-      try {
-        apply(addHostMessageListener, nextHostPort, [
-          &quot;message&quot;,
-          (event) =&gt; {
-            const data = apply(getMessageData, event, []);
-            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
-              sendHeight();
-            }
-          },
-        ]);
-        apply(startHostPort, nextHostPort, []);
-      } catch {
-        return;
-      }
-      hostPort = nextHostPort;
-      sendHeight();
-    },
-    { capture: true },
-  );
-  document.currentScript?.remove();
-  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
-  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
-    if (event.defaultPrevented) {
-      return;
-    }
-    let element = null;
-    if (event.target instanceof globalThis.Element) {
-      element = event.target;
-    } else if (event.target instanceof globalThis.Node) {
-      element = event.target.parentElement;
-    }
-    const link = element?.closest(&quot;a[href]&quot;);
-    const href = link?.getAttribute(&quot;href&quot;);
-    if (href == null) {
-      return;
-    }
-    if (href.startsWith(&quot;#&quot;)) {
-      let id;
-      try {
-        id = decodeURIComponent(href.slice(1));
-      } catch {
-        return;
-      }
-      const target = id.length === 0 ? root : document.getElementById(id);
-      if (
-        target == null ||
-        globalThis.navigator.userActivation?.isActive !== true
-      ) {
-        return;
-      }
-      event.preventDefault();
-      postToHost(&quot;scroll-to&quot;, {
-        top: target.getBoundingClientRect().top + globalThis.scrollY,
-      });
-      return;
-    }
-    event.preventDefault();
-    openExternal({ href });
-  });
-  new ResizeObserver(sendHeight).observe(document.body);
-  syncTheme();
-})();
-&lt;/script&gt;
-&lt;style&gt;:root {
+<style>:root {
   color-scheme: light dark;
   background-color: var(--background) !important;
 
@@ -213,9 +46,9 @@
   --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
 
   /* Internal implementation variables; not part of the agent contract. */
-  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
   --font-mono:
-    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
     monospace;
   --font-size-normal: max(11px, var(--font-size-base));
   --font-size-tooltip: calc(var(--font-size-base) - 1px);
@@ -235,7 +68,7 @@
   --radius-2xl: calc(var(--radius) * 1.6);
   --radius-full: 9999px;
   --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
-  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E&quot;);
+  --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
 
   /* Legacy aliases; not part of the current agent contract. */
   --viz-bg: transparent;
@@ -253,11 +86,11 @@
   --color-border-secondary: var(--border);
 }
 
-:root[data-theme=&quot;light&quot;] {
+:root[data-theme="light"] {
   color-scheme: light;
 }
 
-:root[data-theme=&quot;dark&quot;] {
+:root[data-theme="dark"] {
   color-scheme: dark;
 }
 
@@ -265,7 +98,7 @@
   box-sizing: border-box;
 }
 
-html &gt; body {
+html > body {
   margin: 0;
   padding: 5px;
   color: var(--foreground);
@@ -361,7 +194,7 @@ code:not(pre code) {
   background: var(--card);
 }
 
-#widget &gt; :not(.card) {
+#widget > :not(.card) {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
@@ -464,7 +297,7 @@ small,
   gap: 8px;
 }
 
-.viz-controls &gt; .form-label {
+.viz-controls > .form-label {
   display: grid;
   min-width: min(100%, 260px);
   flex: 1 1 280px;
@@ -474,7 +307,7 @@ small,
   margin-bottom: 0;
 }
 
-.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
   grid-column: 1 / -1;
 }
 
@@ -589,13 +422,13 @@ a.btn {
   color: var(--muted-foreground);
 }
 
-.form-control[type=&quot;file&quot;] {
+.form-control[type="file"] {
   padding: 0;
   overflow: hidden;
   cursor: var(--cursor-interaction, pointer);
 }
 
-.form-control[type=&quot;file&quot;]::file-selector-button {
+.form-control[type="file"]::file-selector-button {
   min-height: 26px;
   margin-right: 8px;
   padding: 0 8px;
@@ -607,22 +440,22 @@ a.btn {
   font: inherit;
 }
 
-.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
   background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
 }
 
-.form-control-color[type=&quot;color&quot;] {
+.form-control-color[type="color"] {
   width: 40px;
   height: 28px;
   padding: 3px;
   cursor: var(--cursor-interaction, pointer);
 }
 
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 
-.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+.form-control-color[type="color"]::-webkit-color-swatch {
   border: 0;
   border-radius: calc(var(--radius-lg) - 4px);
   corner-shape: superellipse(1.5);
@@ -702,7 +535,7 @@ textarea.form-control {
     box-shadow 150ms;
 }
 
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
   border-color: var(--input);
   border-radius: var(--radius-sm);
   corner-shape: superellipse(1.5);
@@ -715,28 +548,28 @@ textarea.form-control {
   background-color: var(--card);
 }
 
-.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
   border-color: var(--primary);
   background-color: var(--primary);
 }
 
 .form-check:not(.form-switch)
-  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  .form-check-input[type="checkbox"]:checked::before {
   display: block;
   width: 100%;
   height: 100%;
   background: var(--primary-foreground);
-  content: &quot;&quot;;
+  content: "";
   mask: var(--checkmark-image) center / 12px 12px no-repeat;
 }
 
-.form-check-input[type=&quot;radio&quot;] {
+.form-check-input[type="radio"] {
   width: 14px;
   height: 14px;
   border-radius: var(--radius-full);
 }
 
-.form-check-input[type=&quot;radio&quot;]:checked {
+.form-check-input[type="radio"]:checked {
   border: 2px solid var(--primary);
   background:
     radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
@@ -790,7 +623,7 @@ textarea.form-control {
   border-radius: var(--radius-full);
   background: light-dark(var(--primary-foreground), var(--foreground));
   box-shadow: var(--shadow-sm);
-  content: &quot;&quot;;
+  content: "";
   transform: translate(2px, -50%);
   transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
 }
@@ -869,8 +702,8 @@ textarea.form-control {
 }
 
 .btn:not(.btn-primary, .viz-tile):is(
-    [aria-pressed=&quot;true&quot;],
-    [aria-selected=&quot;true&quot;],
+    [aria-pressed="true"],
+    [aria-selected="true"],
     .is-selected
   ) {
   border-color: var(--primary);
@@ -878,7 +711,7 @@ textarea.form-control {
   background: var(--primary);
 }
 
-.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+.btn.viz-tile:is([aria-pressed="true"], [aria-selected="true"], .is-selected) {
   border-color: var(--primary);
   box-shadow: inset 0 0 0 1px var(--primary);
 }
@@ -894,7 +727,7 @@ svg {
   height: auto;
 }
 
-#widget &gt; svg {
+#widget > svg {
   width: 100%;
 }
 
@@ -903,17 +736,17 @@ svg {
   color: var(--destructive);
 }
 
-html&gt;body{padding:0}&lt;/style&gt;
-&lt;script&gt;
-(() =&gt; {
+html>body{padding:0}</style>
+<script>
+(() => {
   const root = document.documentElement;
   const initialGlobals =
     globalThis.__codexVisualizationInitialGlobals ?? globalThis.openai;
   delete globalThis.__codexVisualizationInitialGlobals;
   let appliedProperties = [];
 
-  const applyHostStyleVariables = (styleVariables) =&gt; {
-    if (styleVariables == null || typeof styleVariables !== &quot;object&quot;) {
+  const applyHostStyleVariables = (styleVariables) => {
+    if (styleVariables == null || typeof styleVariables !== "object") {
       return;
     }
     for (const property of appliedProperties) {
@@ -921,26 +754,26 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     appliedProperties = [];
     for (const [property, value] of Object.entries(styleVariables)) {
-      if (property.startsWith(&quot;--&quot;) &amp;&amp; typeof value === &quot;string&quot;) {
+      if (property.startsWith("--") && typeof value === "string") {
         root.style.setProperty(property, value);
         appliedProperties.push(property);
       }
     }
   };
 
-  const syncHostStyles = (globals) =&gt; {
+  const syncHostStyles = (globals) => {
     applyHostStyleVariables(globals?.visualizationStyleVariables);
   };
 
   syncHostStyles(initialGlobals);
-  globalThis.addEventListener(&quot;openai:set_globals&quot;, (event) =&gt; {
+  globalThis.addEventListener("openai:set_globals", (event) => {
     syncHostStyles(event.detail?.globals);
   });
 })();
-&lt;/script&gt;
+</script>
 
-&lt;div id=&quot;research-focus-checklist&quot;&gt;
-  &lt;style&gt;
+<div id="research-focus-checklist">
+  <style>
     #research-focus-checklist { display: grid; gap: 20px; }
     #research-focus-checklist .section { display: grid; gap: 12px; }
     #research-focus-checklist .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -959,86 +792,86 @@ html&gt;body{padding:0}&lt;/style&gt;
     @media (prefers-reduced-motion: reduce) {
       #research-focus-checklist .progress-fill { transition: none; }
     }
-  &lt;/style&gt;
+  </style>
 
-  &lt;section class=&quot;section card&quot; aria-labelledby=&quot;focus-heading&quot;&gt;
-    &lt;div class=&quot;status-line&quot;&gt;
-      &lt;h2 id=&quot;focus-heading&quot;&gt;今天先解决一个问题&lt;/h2&gt;
-      &lt;span class=&quot;viz-badge&quot; id=&quot;score-badge&quot;&gt;执行分 0 / 3&lt;/span&gt;
-    &lt;/div&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;core-question&quot;&gt;核心研究问题&lt;/label&gt;
-    &lt;textarea class=&quot;form-control&quot; id=&quot;core-question&quot; rows=&quot;2&quot; placeholder=&quot;例如：芯片厂为什么愿意为金刚石散热支付溢价？&quot;&gt;&lt;/textarea&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;deliverable&quot;&gt;本时段的可见交付物&lt;/label&gt;
-    &lt;input class=&quot;form-control&quot; id=&quot;deliverable&quot; type=&quot;text&quot; placeholder=&quot;例如：一页纸结论 + 三个依据 + 两个待验证问题&quot;&gt;
+  <section class="section card" aria-labelledby="focus-heading">
+    <div class="status-line">
+      <h2 id="focus-heading">今天先解决一个问题</h2>
+      <span class="viz-badge" id="score-badge">执行分 0 / 3</span>
+    </div>
+    <label class="form-label" for="core-question">核心研究问题</label>
+    <textarea class="form-control" id="core-question" rows="2" placeholder="例如：芯片厂为什么愿意为金刚石散热支付溢价？"></textarea>
+    <label class="form-label" for="deliverable">本时段的可见交付物</label>
+    <input class="form-control" id="deliverable" type="text" placeholder="例如：一页纸结论 + 三个依据 + 两个待验证问题">
 
-    &lt;div class=&quot;timer-row&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;text-muted text-small&quot;&gt;剩余时间&lt;/div&gt;
-        &lt;div class=&quot;viz-stat-value timer&quot; id=&quot;timer-display&quot; aria-live=&quot;polite&quot;&gt;75:00&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;viz-controls&quot;&gt;
-        &lt;label class=&quot;form-label&quot; for=&quot;session-length&quot;&gt;时长
-          &lt;select class=&quot;form-select&quot; id=&quot;session-length&quot;&gt;
-            &lt;option value=&quot;45&quot;&gt;45分钟&lt;/option&gt;
-            &lt;option value=&quot;75&quot; selected&gt;75分钟&lt;/option&gt;
-            &lt;option value=&quot;90&quot;&gt;90分钟&lt;/option&gt;
-          &lt;/select&gt;
-        &lt;/label&gt;
-        &lt;button class=&quot;btn btn-primary&quot; id=&quot;timer-toggle&quot; type=&quot;button&quot;&gt;开始专注&lt;/button&gt;
-        &lt;button class=&quot;btn btn-ghost&quot; id=&quot;timer-reset&quot; type=&quot;button&quot;&gt;重置&lt;/button&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+    <div class="timer-row">
+      <div>
+        <div class="text-muted text-small">剩余时间</div>
+        <div class="viz-stat-value timer" id="timer-display" aria-live="polite">75:00</div>
+      </div>
+      <div class="viz-controls">
+        <label class="form-label" for="session-length">时长
+          <select class="form-select" id="session-length">
+            <option value="45">45分钟</option>
+            <option value="75" selected>75分钟</option>
+            <option value="90">90分钟</option>
+          </select>
+        </label>
+        <button class="btn btn-primary" id="timer-toggle" type="button">开始专注</button>
+        <button class="btn btn-ghost" id="timer-reset" type="button">重置</button>
+      </div>
+    </div>
+  </section>
 
-  &lt;section class=&quot;section&quot; aria-labelledby=&quot;before-heading&quot;&gt;
-    &lt;h2 id=&quot;before-heading&quot;&gt;开始前&lt;/h2&gt;
-    &lt;div class=&quot;check-list&quot;&gt;
-      &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input task-check&quot; id=&quot;check-question&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;核心问题已经具体到可以回答&lt;/span&gt;&lt;/label&gt;
-      &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input task-check&quot; id=&quot;check-output&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;已经规定本时段要留下什么交付物&lt;/span&gt;&lt;/label&gt;
-      &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input task-check&quot; id=&quot;check-phone&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;手机已放到另一个房间&lt;/span&gt;&lt;/label&gt;
-      &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input task-check&quot; id=&quot;check-wechat&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;微信、雪球和非必要网页已退出&lt;/span&gt;&lt;/label&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+  <section class="section" aria-labelledby="before-heading">
+    <h2 id="before-heading">开始前</h2>
+    <div class="check-list">
+      <label class="form-check"><input class="form-check-input task-check" id="check-question" type="checkbox"><span class="form-check-label">核心问题已经具体到可以回答</span></label>
+      <label class="form-check"><input class="form-check-input task-check" id="check-output" type="checkbox"><span class="form-check-label">已经规定本时段要留下什么交付物</span></label>
+      <label class="form-check"><input class="form-check-input task-check" id="check-phone" type="checkbox"><span class="form-check-label">手机已放到另一个房间</span></label>
+      <label class="form-check"><input class="form-check-input task-check" id="check-wechat" type="checkbox"><span class="form-check-label">微信、雪球和非必要网页已退出</span></label>
+    </div>
+  </section>
 
-  &lt;section class=&quot;section&quot; aria-labelledby=&quot;parking-heading&quot;&gt;
-    &lt;h2 id=&quot;parking-heading&quot;&gt;分心停车场&lt;/h2&gt;
-    &lt;div class=&quot;viz-controls&quot;&gt;
-      &lt;label class=&quot;form-label&quot; for=&quot;parking-input&quot;&gt;现在不处理，先记下来
-        &lt;input class=&quot;form-control&quot; id=&quot;parking-input&quot; type=&quot;text&quot; placeholder=&quot;想看微信、需要查的数据、突然想到的另一家公司&quot;&gt;
-      &lt;/label&gt;
-      &lt;button class=&quot;btn&quot; id=&quot;parking-add&quot; type=&quot;button&quot;&gt;记下，继续工作&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;ul class=&quot;parking-list&quot; id=&quot;parking-list&quot; aria-live=&quot;polite&quot;&gt;&lt;/ul&gt;
-  &lt;/section&gt;
+  <section class="section" aria-labelledby="parking-heading">
+    <h2 id="parking-heading">分心停车场</h2>
+    <div class="viz-controls">
+      <label class="form-label" for="parking-input">现在不处理，先记下来
+        <input class="form-control" id="parking-input" type="text" placeholder="想看微信、需要查的数据、突然想到的另一家公司">
+      </label>
+      <button class="btn" id="parking-add" type="button">记下，继续工作</button>
+    </div>
+    <ul class="parking-list" id="parking-list" aria-live="polite"></ul>
+  </section>
 
-  &lt;section class=&quot;section card&quot; aria-labelledby=&quot;finish-heading&quot;&gt;
-    &lt;h2 id=&quot;finish-heading&quot;&gt;结束时留下半成品&lt;/h2&gt;
-    &lt;label class=&quot;form-label&quot; for=&quot;one-line-conclusion&quot;&gt;一句话结论&lt;/label&gt;
-    &lt;textarea class=&quot;form-control&quot; id=&quot;one-line-conclusion&quot; rows=&quot;2&quot; placeholder=&quot;即使不完善，也先写出当前判断&quot;&gt;&lt;/textarea&gt;
-    &lt;div class=&quot;field-grid&quot;&gt;
-      &lt;label class=&quot;form-label&quot; for=&quot;supporting-reasons&quot;&gt;三个支持理由
-        &lt;textarea class=&quot;form-control&quot; id=&quot;supporting-reasons&quot; rows=&quot;4&quot; placeholder=&quot;1.&amp;#10;2.&amp;#10;3.&quot;&gt;&lt;/textarea&gt;
-      &lt;/label&gt;
-      &lt;label class=&quot;form-label&quot; for=&quot;evidence-gaps&quot;&gt;下午要补的证据
-        &lt;textarea class=&quot;form-control&quot; id=&quot;evidence-gaps&quot; rows=&quot;4&quot; placeholder=&quot;只记录会改变结论的证据缺口&quot;&gt;&lt;/textarea&gt;
-      &lt;/label&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;check-list&quot;&gt;
-      &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input&quot; id=&quot;deep-block-done&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;完成一次不被打断的深度工作时段&lt;/span&gt;&lt;/label&gt;
-      &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input&quot; id=&quot;visible-output-done&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;留下了可见交付物&lt;/span&gt;&lt;/label&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;progress-track&quot; role=&quot;progressbar&quot; aria-label=&quot;今日执行进度&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;3&quot; aria-valuenow=&quot;0&quot;&gt;
-      &lt;div class=&quot;progress-fill&quot; id=&quot;progress-fill&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;viz-row&quot;&gt;
-      &lt;button class=&quot;btn btn-primary&quot; id=&quot;review-with-codex&quot; type=&quot;button&quot;&gt;让 Codex 帮我复盘今天&lt;/button&gt;
-      &lt;button class=&quot;btn btn-ghost&quot; id=&quot;clear-day&quot; type=&quot;button&quot;&gt;开始新的一天&lt;/button&gt;
-      &lt;span class=&quot;text-muted text-small&quot; id=&quot;save-status&quot;&gt;进度自动保存在本机&lt;/span&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
+  <section class="section card" aria-labelledby="finish-heading">
+    <h2 id="finish-heading">结束时留下半成品</h2>
+    <label class="form-label" for="one-line-conclusion">一句话结论</label>
+    <textarea class="form-control" id="one-line-conclusion" rows="2" placeholder="即使不完善，也先写出当前判断"></textarea>
+    <div class="field-grid">
+      <label class="form-label" for="supporting-reasons">三个支持理由
+        <textarea class="form-control" id="supporting-reasons" rows="4" placeholder="1.&#10;2.&#10;3."></textarea>
+      </label>
+      <label class="form-label" for="evidence-gaps">下午要补的证据
+        <textarea class="form-control" id="evidence-gaps" rows="4" placeholder="只记录会改变结论的证据缺口"></textarea>
+      </label>
+    </div>
+    <div class="check-list">
+      <label class="form-check"><input class="form-check-input" id="deep-block-done" type="checkbox"><span class="form-check-label">完成一次不被打断的深度工作时段</span></label>
+      <label class="form-check"><input class="form-check-input" id="visible-output-done" type="checkbox"><span class="form-check-label">留下了可见交付物</span></label>
+    </div>
+    <div class="progress-track" role="progressbar" aria-label="今日执行进度" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="viz-row">
+      <button class="btn btn-primary" id="review-with-codex" type="button">复制复盘提示词并打开 ChatGPT</button>
+      <button class="btn btn-ghost" id="clear-day" type="button">开始新的一天</button>
+      <span class="text-muted text-small" id="save-status">进度自动保存在本机</span>
+    </div>
+  </section>
 
-  &lt;script&gt;
-    (() =&gt; {
+  <script>
+    (() => {
       const root = document.getElementById('research-focus-checklist');
       const storageKey = 'research-focus-checklist-v1';
       const fieldIds = [
@@ -1047,28 +880,46 @@ html&gt;body{padding:0}&lt;/style&gt;
       ];
       const state = { parking: [], remaining: 75 * 60, running: false, timer: null };
 
-      const byId = id =&gt; root.querySelector('#' + id);
+      const byId = id => root.querySelector('#' + id);
       const saveStatus = byId('save-status');
+
+      function removeStoredState() {
+        try {
+          localStorage.removeItem(storageKey);
+        } catch (_) {
+          // The checklist remains usable even when storage is unavailable.
+        }
+      }
 
       function save() {
         const values = {};
-        fieldIds.forEach(id =&gt; {
+        fieldIds.forEach(id => {
           const el = byId(id);
           values[id] = el.type === 'checkbox' ? el.checked : el.value;
         });
         values['session-length'] = byId('session-length').value;
         values.parking = state.parking;
         values.remaining = state.remaining;
-        localStorage.setItem(storageKey, JSON.stringify(values));
-        saveStatus.textContent = '已自动保存';
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(values));
+          saveStatus.textContent = '已自动保存';
+        } catch (_) {
+          saveStatus.textContent = '当前浏览器不允许本地保存';
+        }
       }
 
       function load() {
-        const raw = localStorage.getItem(storageKey);
+        let raw;
+        try {
+          raw = localStorage.getItem(storageKey);
+        } catch (_) {
+          saveStatus.textContent = '当前浏览器不允许本地保存';
+          return;
+        }
         if (!raw) return;
         try {
           const values = JSON.parse(raw);
-          fieldIds.forEach(id =&gt; {
+          fieldIds.forEach(id => {
             const el = byId(id);
             if (!(id in values)) return;
             if (el.type === 'checkbox') el.checked = Boolean(values[id]);
@@ -1078,7 +929,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           state.parking = Array.isArray(values.parking) ? values.parking : [];
           state.remaining = Number.isFinite(values.remaining) ? values.remaining : Number(byId('session-length').value) * 60;
         } catch (_) {
-          localStorage.removeItem(storageKey);
+          removeStoredState();
         }
       }
 
@@ -1105,7 +956,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         }
         state.running = true;
         renderTimer();
-        state.timer = setInterval(() =&gt; {
+        state.timer = setInterval(() => {
           state.remaining = Math.max(0, state.remaining - 1);
           renderTimer();
           if (state.remaining === 0) {
@@ -1128,7 +979,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       function renderParking() {
         const list = byId('parking-list');
         list.replaceChildren();
-        state.parking.forEach((item, index) =&gt; {
+        state.parking.forEach((item, index) => {
           const li = document.createElement('li');
           li.className = 'parking-item';
           const text = document.createElement('span');
@@ -1138,7 +989,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           remove.className = 'btn btn-ghost';
           remove.textContent = '处理完';
           remove.setAttribute('aria-label', '移除：' + item);
-          remove.addEventListener('click', () =&gt; {
+          remove.addEventListener('click', () => {
             state.parking.splice(index, 1);
             renderParking();
             save();
@@ -1160,13 +1011,13 @@ html&gt;body{padding:0}&lt;/style&gt;
       }
 
       function updateScore() {
-        const hasQuestion = byId('core-question').value.trim().length &gt; 0 &amp;&amp; byId('check-question').checked;
+        const hasQuestion = byId('core-question').value.trim().length > 0 && byId('check-question').checked;
         const deepDone = byId('deep-block-done').checked;
-        const hasOutput = byId('visible-output-done').checked &amp;&amp; byId('one-line-conclusion').value.trim().length &gt; 0;
+        const hasOutput = byId('visible-output-done').checked && byId('one-line-conclusion').value.trim().length > 0;
         const score = [hasQuestion, deepDone, hasOutput].filter(Boolean).length;
         byId('score-badge').textContent = '执行分 ' + score + ' / 3';
         byId('progress-fill').style.width = (score / 3 * 100) + '%';
-        const progress = root.querySelector('[role=&quot;progressbar&quot;]');
+        const progress = root.querySelector('[role="progressbar"]');
         progress.setAttribute('aria-valuenow', String(score));
         save();
       }
@@ -1182,21 +1033,30 @@ html&gt;body{padding:0}&lt;/style&gt;
           '分心事项：' + (state.parking.join('；') || '无'),
           '请告诉我：今天做得好的地方、一个最需要修正的问题，以及明天唯一的核心问题。'
         ].join('\n');
-        if (window.openai &amp;&amp; window.openai.sendFollowUpMessage) {
-          await window.openai.sendFollowUpMessage({ prompt, title: '复盘今天的研究执行' });
+        const chatWindow = window.open('https://chatgpt.com/', '_blank', 'noopener,noreferrer');
+        try {
+          await navigator.clipboard.writeText(prompt);
+          saveStatus.textContent = chatWindow
+            ? '复盘提示词已复制，请粘贴到 ChatGPT'
+            : '提示词已复制；请手动打开 ChatGPT';
+        } catch (_) {
+          window.prompt('请复制下面的复盘提示词，然后粘贴到 ChatGPT：', prompt);
+          saveStatus.textContent = chatWindow
+            ? '请将提示词粘贴到 ChatGPT'
+            : '请复制提示词并手动打开 ChatGPT';
         }
       }
 
       function clearDay() {
         stopTimer();
-        fieldIds.forEach(id =&gt; {
+        fieldIds.forEach(id => {
           const el = byId(id);
           if (el.type === 'checkbox') el.checked = false;
           else el.value = '';
         });
         state.parking = [];
         state.remaining = Number(byId('session-length').value) * 60;
-        localStorage.removeItem(storageKey);
+        removeStoredState();
         renderParking();
         renderTimer();
         updateScore();
@@ -1212,7 +1072,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       byId('timer-reset').addEventListener('click', resetTimer);
       byId('session-length').addEventListener('change', resetTimer);
       byId('parking-add').addEventListener('click', addParking);
-      byId('parking-input').addEventListener('keydown', event =&gt; {
+      byId('parking-input').addEventListener('keydown', event => {
         if (event.key === 'Enter') {
           event.preventDefault();
           addParking();
@@ -1220,27 +1080,27 @@ html&gt;body{padding:0}&lt;/style&gt;
       });
       byId('review-with-codex').addEventListener('click', reviewWithCodex);
       byId('clear-day').addEventListener('click', clearDay);
-      fieldIds.forEach(id =&gt; {
+      fieldIds.forEach(id => {
         const el = byId(id);
         el.addEventListener(el.type === 'checkbox' ? 'change' : 'input', updateScore);
       });
     })();
-  &lt;/script&gt;
-&lt;/div&gt;
+  </script>
+</div>
 
 
-&lt;style id=&quot;codex-visualization-document-scrollbar&quot;&gt;html,body{scrollbar-width:none!important}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none!important}&lt;/style&gt;
+<style id="codex-visualization-document-scrollbar">html,body{scrollbar-width:none!important}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none!important}</style>
 
-&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
+<script src="https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js"></script>
+<script src="https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js"></script>
+<script>
+(() => {
   if (window.FloatingUIDOM == null) {
     return;
   }
   const { autoUpdate, computePosition, flip, offset, shift, size } =
     window.FloatingUIDOM;
-  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipPlacements = new Set(["top", "right", "bottom", "left"]);
   const tooltipId = `codex-visualization-tooltip-${
     window.crypto?.randomUUID?.() ?? Date.now().toString(36)
   }`;
@@ -1255,30 +1115,30 @@ html&gt;body{padding:0}&lt;/style&gt;
   let positionRequest = 0;
   let skipDelayUntil = 0;
 
-  const getTrigger = (target) =&gt;
+  const getTrigger = (target) =>
     target?.nodeType === Node.ELEMENT_NODE
-      ? target.closest(&quot;[data-tooltip]&quot;)
+      ? target.closest("[data-tooltip]")
       : null;
-  const containsTarget = (trigger, target) =&gt;
-    target?.nodeType != null &amp;&amp; trigger.contains(target);
-  const getContent = (trigger) =&gt;
-    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
-  const getPlacement = (trigger) =&gt; {
-    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
-    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  const containsTarget = (trigger, target) =>
+    target?.nodeType != null && trigger.contains(target);
+  const getContent = (trigger) =>
+    trigger.getAttribute("data-tooltip")?.trim() ?? "";
+  const getPlacement = (trigger) => {
+    const placement = trigger.getAttribute("data-tooltip-placement");
+    return tooltipPlacements.has(placement) ? placement : "top";
   };
-  const getTooltip = () =&gt; {
+  const getTooltip = () => {
     if (tooltip == null) {
-      tooltip = document.createElement(&quot;div&quot;);
+      tooltip = document.createElement("div");
       tooltip.id = tooltipId;
-      tooltip.className = &quot;tooltip&quot;;
-      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+      tooltip.className = "tooltip";
+      tooltip.setAttribute("role", "tooltip");
     }
     return tooltip;
   };
-  const setDescribedBy = (trigger, described) =&gt; {
+  const setDescribedBy = (trigger, described) => {
     const ids = new Set(
-      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+      (trigger.getAttribute("aria-describedby") ?? "")
         .split(/\s+/)
         .filter(Boolean),
     );
@@ -1288,19 +1148,19 @@ html&gt;body{padding:0}&lt;/style&gt;
       ids.delete(tooltipId);
     }
     if (ids.size === 0) {
-      trigger.removeAttribute(&quot;aria-describedby&quot;);
+      trigger.removeAttribute("aria-describedby");
     } else {
-      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+      trigger.setAttribute("aria-describedby", [...ids].join(" "));
     }
   };
-  const clearOpenTimeout = () =&gt; {
+  const clearOpenTimeout = () => {
     if (openTimeout != null) {
       window.clearTimeout(openTimeout);
       openTimeout = null;
     }
     pendingTrigger = null;
   };
-  const closeTooltip = (activateSkipDelay = true) =&gt; {
+  const closeTooltip = (activateSkipDelay = true) => {
     clearOpenTimeout();
     positionRequest += 1;
     autoUpdateCleanup?.();
@@ -1315,7 +1175,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       skipDelayUntil = Date.now() + skipDelay;
     }
   };
-  const updatePosition = (trigger, floating) =&gt; {
+  const updatePosition = (trigger, floating) => {
     const request = ++positionRequest;
     void computePosition(trigger, floating, {
       middleware: [
@@ -1326,34 +1186,34 @@ html&gt;body{padding:0}&lt;/style&gt;
           padding: tooltipGap,
           apply({ availableHeight, availableWidth, elements }) {
             elements.floating.style.setProperty(
-              &quot;--tooltip-available-width&quot;,
+              "--tooltip-available-width",
               `${Math.max(0, availableWidth)}px`,
             );
             elements.floating.style.setProperty(
-              &quot;--tooltip-available-height&quot;,
+              "--tooltip-available-height",
               `${Math.max(0, availableHeight)}px`,
             );
           },
         }),
       ],
       placement: getPlacement(trigger),
-      strategy: &quot;fixed&quot;,
+      strategy: "fixed",
     })
-      .then(({ x, y }) =&gt; {
+      .then(({ x, y }) => {
         if (activeTrigger !== trigger || request !== positionRequest) {
           return;
         }
         const scale = window.devicePixelRatio || 1;
         floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
-        floating.style.visibility = &quot;visible&quot;;
+        floating.style.visibility = "visible";
       })
-      .catch(() =&gt; {
-        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+      .catch(() => {
+        if (activeTrigger === trigger && request === positionRequest) {
           closeTooltip(false);
         }
       });
   };
-  const openTooltip = (trigger) =&gt; {
+  const openTooltip = (trigger) => {
     const content = getContent(trigger);
     if (!trigger.isConnected || content.length === 0) {
       return;
@@ -1365,16 +1225,16 @@ html&gt;body{padding:0}&lt;/style&gt;
     closeTooltip();
     const floating = getTooltip();
     floating.textContent = content;
-    floating.style.visibility = &quot;hidden&quot;;
-    floating.style.transform = &quot;translate(0, 0)&quot;;
+    floating.style.visibility = "hidden";
+    floating.style.transform = "translate(0, 0)";
     document.body.appendChild(floating);
     activeTrigger = trigger;
     setDescribedBy(trigger, true);
-    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+    autoUpdateCleanup = autoUpdate(trigger, floating, () => {
       updatePosition(trigger, floating);
     });
   };
-  const requestOpen = (trigger, immediate = false) =&gt; {
+  const requestOpen = (trigger, immediate = false) => {
     if (
       getContent(trigger).length === 0 ||
       activeTrigger === trigger ||
@@ -1385,21 +1245,21 @@ html&gt;body{padding:0}&lt;/style&gt;
     clearOpenTimeout();
     pendingTrigger = trigger;
     const delay =
-      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+      immediate || activeTrigger != null || Date.now() < skipDelayUntil
         ? 0
         : hoverDelay;
     if (delay === 0) {
       openTooltip(trigger);
       return;
     }
-    openTimeout = window.setTimeout(() =&gt; {
+    openTimeout = window.setTimeout(() => {
       openTimeout = null;
       pendingTrigger = null;
       openTooltip(trigger);
     }, delay);
   };
-  const handlePointerOpen = (event) =&gt; {
-    if (event.pointerType === &quot;touch&quot;) {
+  const handlePointerOpen = (event) => {
+    if (event.pointerType === "touch") {
       return;
     }
     const trigger = getTrigger(event.target);
@@ -1408,7 +1268,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
     requestOpen(trigger);
   };
-  const handleLeave = (event) =&gt; {
+  const handleLeave = (event) => {
     const trigger = getTrigger(event.target);
     if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
       return;
@@ -1417,47 +1277,47 @@ html&gt;body{padding:0}&lt;/style&gt;
       closeTooltip();
     }
   };
-  const handleFocusIn = (event) =&gt; {
+  const handleFocusIn = (event) => {
     const trigger = getTrigger(event.target);
-    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+    if (trigger?.matches(":focus-visible")) {
       requestOpen(trigger, true);
     }
   };
-  const handleKeyDown = (event) =&gt; {
-    if (event.key === &quot;Escape&quot;) {
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
       closeTooltip();
     }
   };
-  const handleContextMenu = (event) =&gt; {
+  const handleContextMenu = (event) => {
     const trigger = getTrigger(event.target);
     if (activeTrigger === trigger || pendingTrigger === trigger) {
       closeTooltip();
     }
   };
-  const destroy = () =&gt; {
+  const destroy = () => {
     closeTooltip(false);
-    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
-    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
-    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
-    document.removeEventListener(&quot;focusout&quot;, handleLeave);
-    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
-    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    document.removeEventListener("pointerover", handlePointerOpen);
+    document.removeEventListener("pointerout", handleLeave);
+    document.removeEventListener("focusin", handleFocusIn);
+    document.removeEventListener("focusout", handleLeave);
+    document.removeEventListener("keydown", handleKeyDown);
+    document.removeEventListener("contextmenu", handleContextMenu);
     tooltip = null;
   };
 
-  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
-  document.addEventListener(&quot;pointerout&quot;, handleLeave);
-  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
-  document.addEventListener(&quot;focusout&quot;, handleLeave);
-  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
-  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
-  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+  document.addEventListener("pointerover", handlePointerOpen);
+  document.addEventListener("pointerout", handleLeave);
+  document.addEventListener("focusin", handleFocusIn);
+  document.addEventListener("focusout", handleLeave);
+  document.addEventListener("keydown", handleKeyDown);
+  document.addEventListener("contextmenu", handleContextMenu);
+  window.addEventListener("pagehide", destroy, { once: true });
 })();
-&lt;/script&gt;
-&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-(() =&gt; {
-  const initialize = () =&gt; {
+</script>
+<script id="codex-visualization-lucide" async src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js"></script>
+<script>
+(() => {
+  const initialize = () => {
     globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
   };
   if (globalThis.lucide != null) {
@@ -1465,120 +1325,10 @@ html&gt;body{padding:0}&lt;/style&gt;
     return;
   }
   document
-    .getElementById(&quot;codex-visualization-lucide&quot;)
-    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
-})();
-&lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-"></iframe>
-<script>(() => {
-  const frame = document.getElementById("codex-visualization");
-  if (!(frame instanceof HTMLIFrameElement)) {
-    return;
-  }
-  let viewportHeight = globalThis.innerHeight;
-
-  const channel = new MessageChannel();
-  channel.port1.addEventListener("message", (event) => {
-    const data = event.data;
-    if (typeof data !== "object" || data == null) {
-      return;
-    }
-    if (data.type === "height") {
-      const height = data.height;
-      if (
-        typeof height === "number" &&
-        Number.isFinite(height) &&
-        height >= 0 &&
-        height <= 10_000
-      ) {
-        frame.style.height = Math.ceil(height) + "px";
-      }
-      return;
-    }
-    if (data.type === "scroll-to") {
-      const top = data.top;
-      if (
-        typeof top === "number" &&
-        Number.isFinite(top) &&
-        top >= 0 &&
-        globalThis.navigator.userActivation?.isActive === true
-      ) {
-        globalThis.scrollTo({
-          top: Math.ceil(
-            globalThis.scrollY + frame.getBoundingClientRect().top + top,
-          ),
-        });
-      }
-      return;
-    }
-    if (data.type === "open-external") {
-      const rawHref = data.href;
-      if (typeof rawHref !== "string") {
-        return;
-      }
-      let href;
-      try {
-        const url = new URL(rawHref, document.baseURI);
-        if (url.protocol !== "https:") {
-          return;
-        }
-        href = url.href;
-      } catch {
-        return;
-      }
-      if (globalThis.navigator.userActivation?.isActive === true) {
-        const anchor = document.createElement("a");
-        anchor.href = href;
-        anchor.rel = "noopener noreferrer";
-        anchor.target = "_blank";
-        document.body.appendChild(anchor);
-        anchor.click();
-        anchor.remove();
-      }
-      return;
-    }
-    if (data.type === "follow-up") {
-      const prompt = data.prompt;
-      if (
-        typeof prompt !== "string" ||
-        globalThis.navigator.userActivation?.isActive !== true
-      ) {
-        return;
-      }
-      const title = data.title;
-      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
-    }
-  });
-  channel.port1.start();
-  const srcdoc = frame.dataset.srcdoc;
-  if (srcdoc == null) {
-    return;
-  }
-  globalThis.addEventListener("resize", () => {
-    const height = Number.parseFloat(frame.style.height);
-    if (!Number.isFinite(height) || height <= viewportHeight) {
-      frame.style.removeProperty("height");
-    }
-    viewportHeight = globalThis.innerHeight;
-    channel.port1.postMessage({ type: "measure" });
-  });
-  frame.addEventListener(
-    "load",
-    () => {
-      frame.contentWindow?.postMessage(
-        { type: "codex-visualization-initialize" },
-        "*",
-        [channel.port2],
-      );
-    },
-    { once: true },
-  );
-  frame.srcdoc = srcdoc;
-  delete frame.dataset.srcdoc;
+    .getElementById("codex-visualization-lucide")
+    ?.addEventListener("load", initialize, { once: true });
 })();
 </script>
+
 </body>
 </html>

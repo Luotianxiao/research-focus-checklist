@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data: https://zgxjzryrphrsyvyonsbx.supabase.co wss://zgxjzryrphrsyvyonsbx.supabase.co; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Analyst Workbench Todo</title>
 <style>:root {
   color-scheme: light dark;
@@ -743,6 +743,8 @@ html>body{padding:0}</style>
     #analyst-workbench-todo .todo-toolbar { justify-content: space-between; margin-bottom: 1rem; }
     #analyst-workbench-todo .todo-tabs { display: flex; flex-wrap: wrap; gap: .45rem; }
     #analyst-workbench-todo .todo-stats { margin-bottom: 1rem; }
+    #analyst-workbench-todo .cloud-panel { margin-bottom: 1rem; }
+    #analyst-workbench-todo .cloud-line { justify-content: space-between; }
     #analyst-workbench-todo .todo-form { margin-bottom: 1rem; }
     #analyst-workbench-todo .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; }
     #analyst-workbench-todo .form-wide { grid-column: 1 / -1; }
@@ -784,6 +786,26 @@ html>body{padding:0}</style>
     </div>
     <span class="viz-badge" id="todo-save-status">数据仅保存在本机</span>
   </div>
+
+  <section class="card cloud-panel" aria-label="云同步账户">
+    <div id="auth-signed-out">
+      <div class="viz-row cloud-line">
+        <label class="form-label" for="auth-email">邮箱登录
+          <input class="form-control" id="auth-email" type="email" autocomplete="email" placeholder="输入用于同步的邮箱">
+        </label>
+        <button class="btn btn-primary" id="auth-send-link" type="button">发送登录邮件</button>
+      </div>
+    </div>
+    <div class="viz-row cloud-line" id="auth-signed-in" hidden>
+      <span id="auth-user-email"></span>
+      <div class="viz-row">
+        <button class="btn btn-primary" id="cloud-migrate" type="button" hidden>上传本机任务</button>
+        <button class="btn" id="cloud-sync-now" type="button">立即同步</button>
+        <button class="btn btn-ghost" id="auth-sign-out" type="button">退出登录</button>
+      </div>
+    </div>
+    <p class="notice text-small" id="auth-message">未登录时仍会保存在当前浏览器。</p>
+  </section>
 
   <div class="viz-grid todo-stats" aria-label="任务概览">
     <div class="card viz-stat"><span class="text-muted">今日未完成</span><span class="viz-stat-value" id="stat-today">0</span></div>
@@ -879,26 +901,39 @@ html>body{padding:0}</style>
     <span class="text-muted text-small">网页代码公开，任务内容不会上传到 GitHub</span>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     (() => {
       const root = document.getElementById('analyst-workbench-todo');
       const storageKey = 'analyst-workbench-todo-v1';
+      const dirtyKey = 'analyst-workbench-todo-dirty-v1';
+      const lastUserKey = 'analyst-workbench-todo-user-v1';
+      const supabaseUrl = 'https://zgxjzryrphrsyvyonsbx.supabase.co';
+      const supabasePublishableKey = 'sb_publishable_mv5B1pAZolCYyNRdgVTMkw_Lrwwd3Gc';
       const statuses = ['待拆解', '进行中', '等待', '待审核', '已完成'];
       const field = id => root.querySelector('#' + id);
-      const state = { tasks: [], view: 'today' };
+      const state = { tasks: [], view: 'today', session: null, dirty: false, pendingLocal: [], syncTimer: null, syncing: false };
+      const cloud = globalThis.supabase?.createClient(supabaseUrl, supabasePublishableKey, {auth:{persistSession:true,detectSessionInUrl:true}});
       const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
 
       function uid() {
         return globalThis.crypto?.randomUUID?.() || String(Date.now()) + Math.random().toString(16).slice(2);
       }
 
-      function save() {
+      function setDirty(value) {
+        state.dirty = value;
+        try { localStorage.setItem(dirtyKey, value ? '1' : '0'); } catch (_) {}
+      }
+
+      function save(markDirty = true) {
         try {
           localStorage.setItem(storageKey, JSON.stringify(state.tasks));
-          field('todo-save-status').textContent = '已保存在本机';
+          if (markDirty) setDirty(true);
+          field('todo-save-status').textContent = state.session ? '等待云端同步' : '已保存在本机';
         } catch (_) {
           field('todo-save-status').textContent = '当前浏览器不允许保存';
         }
+        if (markDirty && state.session) scheduleCloudSync();
       }
 
       function load() {
@@ -906,10 +941,154 @@ html>body{padding:0}</style>
           const raw = localStorage.getItem(storageKey);
           const parsed = raw ? JSON.parse(raw) : [];
           state.tasks = Array.isArray(parsed) ? parsed : [];
+          state.dirty = localStorage.getItem(dirtyKey) === '1';
         } catch (_) {
           state.tasks = [];
           field('todo-save-status').textContent = '未能读取本机数据';
         }
+      }
+
+      function isUuid(value) {
+        return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(value || '');
+      }
+
+      function toLocalDateTime(value) {
+        if (!value) return '';
+        const date = new Date(value);
+        const pad = number => String(number).padStart(2, '0');
+        return `${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+      }
+
+      function toCloudRow(task, userId) {
+        if (!isUuid(task.id)) task.id = uid();
+        return {
+          id: task.id, user_id: userId, title: task.title, project: task.project, type: task.type || '深度研究',
+          status: task.status || '待拆解', duration: Number(task.duration) || 0,
+          due_at: task.due ? new Date(task.due).toISOString() : null, followup_date: task.followup || null,
+          location: task.location || '', waiting_for: task.waitingFor || '', notes: task.notes || '',
+          is_today: Boolean(task.today), is_deep: Boolean(task.deep), created_at: task.createdAt || new Date().toISOString()
+        };
+      }
+
+      function fromCloudRow(row) {
+        return {
+          id: row.id, title: row.title, project: row.project, type: row.type, status: row.status,
+          duration: row.duration, due: toLocalDateTime(row.due_at), followup: row.followup_date || '',
+          location: row.location || '', waitingFor: row.waiting_for || '', notes: row.notes || '',
+          today: row.is_today, deep: row.is_deep, createdAt: row.created_at
+        };
+      }
+
+      function cloudErrorMessage(error) {
+        if (error?.code === 'PGRST205' || String(error?.message || '').includes("Could not find the table")) {
+          return '数据库尚未初始化：请先在 Supabase SQL Editor 运行建表脚本。';
+        }
+        return '云同步失败，修改仍已保存在本机。';
+      }
+
+      function scheduleCloudSync() {
+        clearTimeout(state.syncTimer);
+        state.syncTimer = setTimeout(syncCloud, 700);
+      }
+
+      async function syncCloud() {
+        if (!cloud || !state.session || state.syncing) return;
+        state.syncing = true;
+        field('todo-save-status').textContent = '正在同步';
+        try {
+          const userId = state.session.user.id;
+          const rows = state.tasks.map(task => toCloudRow(task, userId));
+          const existingResult = await cloud.from('tasks').select('id');
+          if (existingResult.error) throw existingResult.error;
+          if (rows.length) {
+            const upsertResult = await cloud.from('tasks').upsert(rows, {onConflict:'id'});
+            if (upsertResult.error) throw upsertResult.error;
+          }
+          const localIds = new Set(rows.map(row => row.id));
+          const staleIds = (existingResult.data || []).map(row => row.id).filter(id => !localIds.has(id));
+          if (staleIds.length) {
+            const deleteResult = await cloud.from('tasks').delete().in('id', staleIds);
+            if (deleteResult.error) throw deleteResult.error;
+          }
+          setDirty(false);
+          localStorage.setItem(lastUserKey, userId);
+          field('todo-save-status').textContent = '云端已同步';
+          field('auth-message').textContent = '任务已在云端保存，可在其他设备登录同一邮箱查看。';
+          field('cloud-migrate').hidden = true;
+          save(false);
+        } catch (error) {
+          field('todo-save-status').textContent = '仅保存在本机';
+          field('auth-message').textContent = cloudErrorMessage(error);
+        } finally {
+          state.syncing = false;
+        }
+      }
+
+      async function loadCloud() {
+        if (!cloud || !state.session) return;
+        const localBefore = [...state.tasks];
+        const lastUser = localStorage.getItem(lastUserKey);
+        field('todo-save-status').textContent = '正在读取云端';
+        const result = await cloud.from('tasks').select('*').order('created_at', {ascending:false});
+        if (result.error) {
+          field('todo-save-status').textContent = '仅保存在本机';
+          field('auth-message').textContent = cloudErrorMessage(result.error);
+          return;
+        }
+        const remote = (result.data || []).map(fromCloudRow);
+        if (lastUser === state.session.user.id && state.dirty) {
+          await syncCloud();
+          return;
+        }
+        if (remote.length) {
+          state.tasks = remote;
+          state.pendingLocal = lastUser !== state.session.user.id ? localBefore : [];
+          field('cloud-migrate').hidden = state.pendingLocal.length === 0;
+          field('cloud-migrate').textContent = '合并本机任务';
+        } else if (localBefore.length) {
+          state.tasks = localBefore;
+          state.pendingLocal = localBefore;
+          field('cloud-migrate').hidden = false;
+          field('cloud-migrate').textContent = '上传本机任务';
+        } else {
+          state.tasks = [];
+        }
+        setDirty(false);
+        localStorage.setItem(lastUserKey, state.session.user.id);
+        save(false);
+        render();
+        field('todo-save-status').textContent = '云端已连接';
+      }
+
+      async function migrateLocalTasks() {
+        const combined = new Map(state.tasks.map(task => [task.id, task]));
+        state.pendingLocal.forEach(task => {
+          const next = {...task, id: isUuid(task.id) ? task.id : uid()};
+          if (![...combined.values()].some(existing => existing.title === next.title && existing.project === next.project)) combined.set(next.id, next);
+        });
+        state.tasks = [...combined.values()];
+        state.pendingLocal = [];
+        setDirty(true);
+        render();
+        await syncCloud();
+      }
+
+      function renderAuth() {
+        const signedIn = Boolean(state.session);
+        field('auth-signed-out').hidden = signedIn;
+        field('auth-signed-in').hidden = !signedIn;
+        field('auth-user-email').textContent = signedIn ? `已登录：${state.session.user.email || ''}` : '';
+        if (!signedIn) {
+          field('todo-save-status').textContent = '已保存在本机';
+          field('auth-message').textContent = '未登录时仍会保存在当前浏览器。';
+        }
+      }
+
+      async function handleSession(session) {
+        const changed = state.session?.user?.id !== session?.user?.id;
+        state.session = session;
+        renderAuth();
+        if (session && changed) await loadCloud();
       }
 
       function formatDate(value, dateOnly = false) {
@@ -1071,7 +1250,29 @@ html>body{padding:0}</style>
         event.target.value = '';
       });
 
-      load(); resetForm(); render();
+      field('auth-send-link').addEventListener('click', async () => {
+        const email = field('auth-email').value.trim();
+        if (!email || !cloud) return;
+        field('auth-message').textContent = '正在发送登录邮件…';
+        const redirectTo = location.origin + location.pathname;
+        const result = await cloud.auth.signInWithOtp({email, options:{emailRedirectTo:redirectTo}});
+        field('auth-message').textContent = result.error ? '登录邮件发送失败，请检查邮箱或项目设置。' : '登录邮件已发送，请在同一设备打开邮件中的链接。';
+      });
+      field('auth-sign-out').addEventListener('click', async () => {
+        if (cloud) await cloud.auth.signOut();
+        state.session = null;
+        renderAuth();
+      });
+      field('cloud-sync-now').addEventListener('click', syncCloud);
+      field('cloud-migrate').addEventListener('click', migrateLocalTasks);
+
+      load(); resetForm(); render(); renderAuth();
+      if (cloud) {
+        cloud.auth.onAuthStateChange((_event, session) => setTimeout(() => handleSession(session), 0));
+        cloud.auth.getSession().then(({data}) => handleSession(data.session));
+      } else {
+        field('auth-message').textContent = '云同步组件加载失败，当前仍会保存在本机。';
+      }
     })();
   </script>
 </div>
